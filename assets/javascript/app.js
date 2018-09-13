@@ -13,7 +13,7 @@
                 <button class="gifBtn" data-gif="${$('#inputPhrase').val()}">${$('#inputPhrase').val()}</button>
                 `)
             }
-            $('#inputPhrase').val()
+            $('#inputPhrase').val('')
         })
 
         // Pull the Gif Images and Display them
@@ -32,7 +32,7 @@
                     r.data.forEach(gif => {
                         $('#gifArea').append(`
                         <div class="col-md-3 col-lg-3" >
-                         <img class="gif-image" id="gifChange" src="${gif.images.original_still.url}" alt="${gif.title}"
+                         <img class="gif-image" id="gifChange" src="${gif.images.original.url}" alt="${gif.title}"
                          onclick="$('.gif-image').attr('src', "${gif.images.original.url}")
                          >
                          <h4 class="gif-rating">Rated: ${gif.rating}</h4>
@@ -53,6 +53,6 @@
                 // $('#gifChange').on('click', function () {
                 //     event.preventDefault()
                 //     console.log('hello')
-                // })
                 // gifChange = $('.gif-image').attr('src', "${gif.images.original.url}")
+                // })
                 
