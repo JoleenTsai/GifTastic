@@ -1,4 +1,3 @@
-        // Example Gif
         sampleGif = ['Booya', 'You Got It Dude', 'Wassup', 'As If!', 'Whatever']
         sampleGif.forEach(gif => {
             $('#buttonArea').append(`
@@ -6,6 +5,7 @@
             `)
 
         })
+        
         $('#submitPhrase').on('click', function () {
             event.preventDefault()
             if ($('#inputPhrase').val().trim() !== '') {
@@ -16,7 +16,7 @@
             $('#inputPhrase').val('')
         })
 
-        // Pull the Gif Images and Display them
+
         $(document).on('click', '.gifBtn', function () {
             $('#gifArea').empty()
 
@@ -40,19 +40,12 @@
                          `)
                         });
                     })
+
                     .catch(function (e) { console.log(e) })
                     
                 })
 
-                //Clear Gify Area
                 $('#clearGifBtn').on('click', function () {
                     event.preventDefault()
                     $('#gifArea').empty()
                 })
-                
-                // $('#gifChange').on('click', function () {
-                //     event.preventDefault()
-                //     console.log('hello')
-                // gifChange = $('.gif-image').attr('src', "${gif.images.original.url}")
-                // })
-                
