@@ -4,6 +4,7 @@
             $('#buttonArea').append(`
             <button class="gifBtn" data-gif="${gif}"> ${gif}</button>
             `)
+
         })
         $('#submitPhrase').on('click', function () {
             event.preventDefault()
@@ -30,7 +31,7 @@
                 .then(function (r) {
                     r.data.forEach(gif => {
                         $('#gifArea').append(`
-                        <div class="col-md-4 col-lg-3" >
+                        <div class="col-md-3 col-lg-3" >
                          <img class="gif-image" id="gifChange" src="${gif.images.original_still.url}" alt="${gif.title}"
                          onclick="$('.gif-image').attr('src', "${gif.images.original.url}")
                          >
@@ -39,19 +40,19 @@
                          `)
                         });
                     })
-
                     .catch(function (e) { console.log(e) })
                     
-                    //Clear Gify Area
-                    $('.clearGifBtn').on('click', function () {
-                        event.preventDefault()
-                        $('#gifArea').empty()
-                    })
                 })
 
-                $('#gifChange').on('click', function () {
+                //Clear Gify Area
+                $('#clearGifBtn').on('click', function () {
                     event.preventDefault()
-                    console.log('hello')
+                    $('#gifArea').empty()
                 })
+                
+                // $('#gifChange').on('click', function () {
+                //     event.preventDefault()
+                //     console.log('hello')
+                // })
                 // gifChange = $('.gif-image').attr('src', "${gif.images.original.url}")
                 
